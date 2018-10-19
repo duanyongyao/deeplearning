@@ -45,7 +45,7 @@ public class TFServerUDF extends UDF {
     public Float evaluate(List<Float> featureList) {
 
         SameDiff graph = tfUtil.importGraph(tfGraph);
-        SDVariable inTensor = graph.variableMap().get("input");//输入张量
+        SDVariable inTensor = graph.getVariable("input");//输入张量
         SDVariable outTensor = graph.getVariable("prediction");//输出张量
 
         float[] feature = new float[featureList.size()];
